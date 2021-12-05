@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@keyframes shift {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes reverse {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+body {
+  background: #161616;
+}
+
+#basicTemplateContent {
+  margin-top: 10vh;
+  margin-left: 4vw;
+}
+
+#basicTemplateImage:hover {
+  animation-name: shift;
+  animation-duration: .5s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+#basicTemplateImage {
+  margin-top: 5vh;
+  margin-left: 4vw;
+  border-radius: 10px;
+  width: 33%;
+  box-shadow: 5px 5px 17px 5px black;
+  cursor: pointer;
+  animation-name: reverse;
+  animation-duration: .5s;
+}
+
+p {
+  color: #fff;
+  font-family: Roboto Mono;
+}
+
+p span {
+  color: #fff;
+  font-family: Roboto Mono;
+}
+
+p .red {
+  color: #ca1515;
+  font-family: Roboto Mono;
+}
+
+p .blue {
+  color: #236ce0;
+  font-family: Roboto Mono;
+}
+
+p .yellow {
+  color: #dfe225;
+  font-family: Roboto Mono;
+}
+
+p span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

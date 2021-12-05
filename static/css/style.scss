@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+@mixin theme($theme: white) {
+  @if $theme == white {
+    color: #fff;
+  } @else if $theme == blue {
+    color: #236ce0;
+  } @else if $theme == red {
+    color: rgb(202, 21, 21);
+  } @else if $theme == yellow {
+    color: rgb(223, 226, 37);
+  }
+  font-family: Roboto Mono
+}
+
+@keyframes shift {
+  from {transform: translateY(0px);}
+  to {transform: translateY(-10px);}
+}
+
+@keyframes reverse {
+  from {transform: translateY(-10px);}
+  to {transform: translateY(0px);}
+}
+
+body {
+	background: rgb(22, 22, 22);
+}
+
+#basicTemplateContent {
+  margin-top: 10vh;
+	margin-left: 4vw;
+}
+
+#basicTemplateImage:hover {
+  animation-name: shift;
+  animation-duration: .5s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+#basicTemplateImage {
+  margin-top: 5vh;
+	margin-left: 4vw;
+  border-radius: 10px;
+  width: 33%;
+  box-shadow: 5px 5px 17px 5px rgba(0,0,0,1);
+  cursor: pointer;
+  animation-name: reverse;
+  animation-duration: .5s;
+}
+
+p {
+  @include theme;
+  
+  span {
+    @include theme;
+  }
+
+  .red {
+    @include theme($theme: red);
+  }
+
+  .blue {
+    @include theme($theme: blue);
+  }
+
+  .yellow {
+    @include theme($theme: yellow);
+  }
+
+  span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
