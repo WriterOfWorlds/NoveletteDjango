@@ -2,46 +2,132 @@
 @keyframes shift {
   from {
     transform: translateY(0px);
+    width: 14vw;
   }
   to {
     transform: translateY(-10px);
+    width: 16vw;
   }
 }
 
 @keyframes reverse {
   from {
     transform: translateY(-10px);
+    width: 16vw;
+  }
+  to {
+    transform: translateY(0px);
+    width: 14vw;
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(350px);
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translateY(350px);
   }
   to {
     transform: translateY(0px);
   }
 }
 
-body {
-  background: #161616;
+@keyframes menu {
+  from {
+    transform: translateX(-335px);
+    background: transparent;
+    box-shadow: 5px 5px 17px 5px rgba(0, 0, 0, 0);
+  }
+  to {
+    transform: translateX(0px);
+    background: #222222;
+    box-shadow: 5px 5px 17px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
-#basicTemplateContent {
+body {
+  background: #161616;
+  overflow: hidden;
+}
+
+.genericText {
   margin-top: 10vh;
   margin-left: 4vw;
 }
 
-#basicTemplateImage:hover {
+.interactDiv:hover {
   animation-name: shift;
   animation-duration: .5s;
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
 
-#basicTemplateImage {
-  margin-top: 5vh;
-  margin-left: 4vw;
+.interactDiv {
   border-radius: 10px;
-  width: 33%;
-  box-shadow: 5px 5px 17px 5px black;
+  width: 14vw;
+  box-shadow: 5px 5px 17px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   animation-name: reverse;
   animation-duration: .5s;
+  text-align: center;
+  background-color: #2e2e2e;
+  padding: 5px;
+  height: fit-content;
+}
+
+.imageDiv {
+  border-radius: 10px;
+  width: 14vw;
+  box-shadow: 5px 5px 17px 5px rgba(0, 0, 0, 0.2);
+  animation-name: reverse;
+  animation-duration: .5s;
+  text-align: center;
+  background-color: #222222;
+  padding: 5px;
+  height: fit-content;
+}
+
+.imageDiv .image {
+  filter: opacity(50%);
+}
+
+#menu {
+  background: #222222;
+  box-shadow: 5px 5px 17px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 25vw;
+  z-index: 5;
+}
+
+#menu #menubtn {
+  position: absolute;
+  right: 4px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.image {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.genericCardText {
+  color: #fff;
+  font-family: Roboto Mono;
+  margin: 10px 0px 10px;
+  text-align: center;
+  padding: 6px 0px 10px;
+  font-size: 5vh;
 }
 
 p {
@@ -72,4 +158,14 @@ p .yellow {
 p span:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.flexbox {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  align-content: space-around;
+  justify-content: center;
+  column-gap: 10vw;
 }

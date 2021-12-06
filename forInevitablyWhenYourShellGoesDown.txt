@@ -1,1 +1,1 @@
-sass --watch static/css:static/css
+python manage.py sass static/css static/css --watch

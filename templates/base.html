@@ -7,13 +7,13 @@
 	<meta name="viewport" content="width=device-width">
 	<title>Novelette</title>
 	<link rel="stylesheet" href="{% static "css/style.css" %}">
+  <div id="menu">
+    <img src="{% static "assets/menu.svg" %}" id="menubtn">
+  </div>
 </head>
 
-<body>
+<body id="body">
 	{% block content %}{% endblock content %}
 </body>
-
-<script src="{% static "scripts/template_reader.js" %}">
-</script>
 
 </html>

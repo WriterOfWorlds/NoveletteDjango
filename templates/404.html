@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div id="404" class="genericText">
+	</div>
+  <script src="{% static "scripts/global.js" %}?version=1">
+  </script>
+  <script>
+    const msg = "This page doesn't exist??? What a [!red!shocker]!~You may have entered the wrong url, followed a dead link, or went looking for non-existing pages.~~(By chance, if you happen to be looking for my test enviornment where I do all the work, go <a href='/template'>here</a>. Private eyes only!)~~~Wanna play [!blue!go-fish]?";
+    fillContent(msg, "404");
+  </script>
+{% endblock content %}

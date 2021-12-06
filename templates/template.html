@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <script src="{% static "scripts/global.js" %}?version=1">
+</script>
+  <script>
+    function simpleCat() {
+      fillContent(dialogue + "~Thank you for petting a la the [!yellow!kitty]!~The [!yellow!cat] thanks [!yellow!you] very much.", "templateContent");
+      setState("defaultImage", "basicTemplateDiv1", function(){});
+      setState("defaultImage", "basicTemplateDiv2", function(){});
+      setState("defaultImage", "basicTemplateDiv3", function(){});
+      setState("hide", "flexbox");
+      setTimeout(function() {
+        fillContent("Surfer", "genericCardText1");
+        fillContent("Surfer", "genericCardText2");
+        fillContent("Surfer", "genericCardText3");
+        fillImage("{% static "assets/stockphoto.jpeg" %}", "basicTemplateImage1");
+        fillImage("{% static "assets/stockphoto.jpeg" %}", "basicTemplateImage2");
+        fillImage("{% static "assets/stockphoto.jpeg" %}", "basicTemplateImage3");
+      }, 1000)
+      setTimeout(function(){
+        setState("interactable", "basicTemplateDiv1", function(){simpleCat()});
+        setState("interactable", "basicTemplateDiv2", function(){simpleCat()});
+        setState("show", "flexbox");
+      }, 1400);
+    }
+    document.getElementById("menu").style.display = "none";
+  </script>
+  <div id="basicTemplateContent" class="genericText">
+    <p id="templateContent" class="genericText">
+    </p>
+	</div>
+  <div class="flexbox" id="flexbox">
+    <div id="basicTemplateDiv1" class="imageDiv">
+      <img id="basicTemplateImage1" class="image">
+      <p class="genericCardText" id="genericCardText1">Cat</p>
+    </div>
+    <div id="basicTemplateDiv2" class="interactDiv" onclick='simpleCat();'>
+      <img id="basicTemplateImage2" class="image">
+      <p class="genericCardText" id="genericCardText2">Cat</p>
+    </div>
+    <div id="basicTemplateDiv3" class="imageDiv">
+      <img id="basicTemplateImage3" class="image">
+      <p class="genericCardText" id="genericCardText3">Cat</p>
+    </div>
+  </div>
+
+<script src="{% static "scripts/template.js" %}?version=1">
+</script>
+{% endblock content %}
